@@ -16,7 +16,6 @@ function getLocation() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             const lat = data[0].lat;
             const lon = data[0].lon;
 
@@ -29,12 +28,9 @@ function getLocation() {
             return response.json();
         })
         .then(function (data) {
-            for (var i = 0; i < 5; i++) {
-                let forecastItem = document.createElement('li');
-                forecastItem.textContent = data[i].html.url;
-                repoList.appendChild(forecastItem);
+            console.log(data);
             }
-        });
+        );
 };
 
 searchBtn.addEventListener('click', getLocation);
