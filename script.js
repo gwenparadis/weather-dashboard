@@ -2,6 +2,7 @@
 //code taken and remastered from activity 6.1.4 to try and figure out how to make the search into fetch request...
 const searchBtn = document.getElementById("search-button");
 const weatherLocation = document.getElementById("weather-location");
+//let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 const cityName = searchBtn.parentElement.children[1];
 let lat;
 let lon;
@@ -35,8 +36,11 @@ function getCurrentWeather() {
 
             const currentWeatherDisplay = document.getElementById("current-weather-display");
             const currentWeatherInfo = document.createElement("p");
-            currentWeatherInfo.innerText = "Current Temperature: " + (data.main.temp) + " F, Humidity: " + (data.main.humidity) + "%, Wind Speed: " + (data.wind.speed) + " mph";
+            currentWeatherInfo.innerText = "Current Temperature: " + (data.main.temp) + "F, Conditions: " + (data.weather[0].icon) + ", Humidity: " + (data.main.humidity) + "%, Wind Speed: " + (data.wind.speed) + " mph";
             currentWeatherDisplay.appendChild(currentWeatherInfo);
+        })
+        .catch(function (error) {
+            console.log(error);
         });
 
     getForecast();
@@ -52,6 +56,9 @@ function getForecast() {
         })
         .then(function (data) {
             console.log(data);
+        })
+        .catch(function (error) {
+            console.log(error);
         })
 
     //const forecastDisplay = document.getElementById()
