@@ -7,6 +7,7 @@ const cityName = searchBtn.parentElement.children[1];
 
 //fetch request to get weather forecast location with geocoding API
 function getCurrentWeather() {
+    weatherLocation.innerText = cityName.value;
     //get request to enter into fetch request
     const locationUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + (cityName.value) + '&appid=6f4f8d8e13827c9d81f342b6e1821c12';
 
@@ -18,7 +19,7 @@ function getCurrentWeather() {
             const lat = data[0].lat;
             const lon = data[0].lon;
 
-            console.log('the latitude and longitude coordinates are:' + lat + " ," + lon);
+            console.log('the latitude and longitude coordinates are: ' + lat + " ," + lon);
 
             const forecastUrl = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=6f4f8d8e13827c9d81f342b6e1821c12';
             return fetch(forecastUrl);
@@ -32,8 +33,8 @@ function getCurrentWeather() {
 
             const currentWeatherDisplay = document.getElementById("current-weather-display");
             const currentWeatherInfo = document.createElement("p");
-            currentWeatherInfo.innerText = "Current Temparature " + (data.main.temp) + " degrees Fahrenheit";
-            currentWeatherDisplay.append(currentWeatherInfo);
+            currentWeatherInfo.innerText = "Current Temperature: " + (data.main.temp) + " F, Humidity: " + (data.main.humidity) + "%, Wind Speed: " + (data.wind.speed) + " mph";
+            currentWeatherDisplay.appendChild(currentWeatherInfo);
             }
         );
 };
