@@ -38,18 +38,21 @@ function getCurrentWeather() {
             const currentWeatherInfo = document.createElement("p");
             currentWeatherInfo.innerText = "Current Temperature: " + (data.main.temp) + "F, Conditions: " + (data.weather[0].icon) + ", Humidity: " + (data.main.humidity) + "%, Wind Speed: " + (data.wind.speed) + " mph";
             currentWeatherDisplay.appendChild(currentWeatherInfo);
+            getForecast(data);
         })
         .catch(function (error) {
             console.log(error);
         });
-
-    getForecast();
 };
 
 //need to debug the following; keep getting 400 error
-function getForecast() {
+function getForecast(data) {
     //get request for the 5-day forecast API
-    const forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "units=imperial&appid=6f4f8d8e13827c9d81f342b6e1821c12";
+    console.log(data);
+    console.log(data.coord.lat);
+    console.log(data.coord.lon);
+
+    const forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&units=imperial&appid=6f4f8d8e13827c9d81f342b6e1821c12";
     return fetch(forecastUrl)
         .then(function (response) {
             return response.json();
