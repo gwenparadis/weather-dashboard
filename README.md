@@ -5,7 +5,7 @@ This application allows the user to enter a desired location in the search bar, 
 
 ## Installation
 
-This webpage can be accessed on Github Pages, at the link:
+This webpage can be accessed on Github Pages, at the link: https://gwenparadis.github.io/weather-dashboard/
 
 ## Usage
 
