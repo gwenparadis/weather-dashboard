@@ -45,7 +45,7 @@ function getCurrentWeather() {
         });
 };
 
-//need to debug the following; keep getting 400 error
+//get the forecast data and render it to the page
 function getForecast(data) {
     //get request for the 5-day forecast API
     console.log(data);
@@ -59,12 +59,41 @@ function getForecast(data) {
         })
         .then(function (data) {
             console.log(data);
+
+            //get elements by id, set the weather data to a variable, append data to card as you did with current weather data
+            //card 1
+            const getDayOne = document.getElementById("forecast-displayOne");
+            const displayDayOne = document.createElement("p");
+            displayDayOne.innerText = "day one info here!";
+            getDayOne.appendChild(displayDayOne);
+
+            //card 2
+            const getDayTwo = document.getElementById("forecast-displayTwo");
+            const displayDayTwo = document.createElement("p");
+            displayDayTwo.innerText = "day two info here!";
+            getDayTwo.appendChild(displayDayTwo);
+
+            //card 3
+            const getDayThree = document.getElementById("forecast-displayThree");
+            const displayDayThree = document.createElement("p");
+            displayDayThree.innerText = "day three info here!";
+            getDayThree.appendChild(displayDayThree);
+
+            //card 4
+            const getDayFour = document.getElementById("forecast-displayFour");
+            const displayDayFour = document.createElement("p");
+            displayDayFour.innerText = "day four info here!";
+            getDayFour.appendChild(displayDayFour);
+
+            //card 5
+            const getDayFive = document.getElementById("forecast-displayFive");
+            const displayDayFive = document.createElement("p");
+            displayDayFive.innerText = "day four info here!";
+            getDayFive.appendChild(displayDayFive);
         })
         .catch(function (error) {
             console.log(error);
         })
-
-    //const forecastDisplay = document.getElementById()
 };
 
 searchBtn.addEventListener('click', getCurrentWeather);
