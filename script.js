@@ -9,8 +9,6 @@ let lon;
 
 //fetch request to get weather forecast location with geocoding API
 function getCurrentWeather() {
-    //Set current weather box to be titled with the searched city name
-    weatherLocation.innerText = "Current Weather in " + cityName.value;
     //get request for geolocation API, turn city name into latitude-longitude
     const locationUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + (cityName.value) + '&appid=6f4f8d8e13827c9d81f342b6e1821c12';
 
@@ -35,9 +33,8 @@ function getCurrentWeather() {
             console.log(data.main);
 
             const currentWeatherDisplay = document.getElementById("current-weather-display");
-            const currentWeatherInfo = document.createElement("p");
-            currentWeatherInfo.innerText = "Current Temperature: " + (data.main.temp) + "F, Conditions: " + (data.weather[0].icon) + ", Humidity: " + (data.main.humidity) + "%, Wind Speed: " + (data.wind.speed) + " mph";
-            currentWeatherDisplay.appendChild(currentWeatherInfo);
+            weatherLocation.innerText = "Current Weather in " + cityName.value + " on " + data.dt;
+            currentWeatherDisplay.innerText = "Current Temperature: " + (data.main.temp) + "F, Icon: " + (data.weather[0].icon) + ", Humidity: " + (data.main.humidity) + "%, Wind Speed: " + (data.wind.speed) + " mph";
             getForecast(data);
         })
         .catch(function (error) {
@@ -62,34 +59,34 @@ function getForecast(data) {
 
             //get elements by id, set the weather data to a variable, append data to card as you did with current weather data
             //card 1
+            const dayNameOne = document.getElementById("forecastOne");
+            dayNameOne.innerText = data.list[3].dt_txt;
             const getDayOne = document.getElementById("forecast-displayOne");
-            const displayDayOne = document.createElement("p");
-            displayDayOne.innerText = "day one info here!";
-            getDayOne.appendChild(displayDayOne);
+            getDayOne.innerText = "Temperature: " + (data.list[3].main.temp) + "F, Icon: " + (data.list[3].weather[0].icon) + ", Humidity: " + (data.list[3].main.humidity) + "%, Wind Speed: " + (data.list[3].wind.speed) + "mph";
 
             //card 2
+            const dayNameTwo = document.getElementById("forecastTwo");
+            dayNameTwo.innerText = data.list[11].dt_txt;
             const getDayTwo = document.getElementById("forecast-displayTwo");
-            const displayDayTwo = document.createElement("p");
-            displayDayTwo.innerText = "day two info here!";
-            getDayTwo.appendChild(displayDayTwo);
+            getDayTwo.innerText = "Temperature: " + (data.list[11].main.temp) + "F, Icon: " + (data.list[11].weather[0].icon) + ", Humidity: " + (data.list[11].main.humidity) + "%, Wind Speed: " + (data.list[11].wind.speed) + "mph";
 
             //card 3
+            const dayNameThree = document.getElementById("forecastThree");
+            dayNameThree.innerText = data.list[19].dt_txt;
             const getDayThree = document.getElementById("forecast-displayThree");
-            const displayDayThree = document.createElement("p");
-            displayDayThree.innerText = "day three info here!";
-            getDayThree.appendChild(displayDayThree);
+            getDayThree.innerText = "Temperature: " + (data.list[19].main.temp) + "F, Icon: " + (data.list[19].weather[0].icon) + ", Humidity: " + (data.list[19].main.humidity) + "%, Wind Speed: " + (data.list[19].wind.speed) + "mph";
 
             //card 4
+            const dayNameFour = document.getElementById("forecastFour");
+            dayNameFour.innerText = data.list[27].dt_txt;
             const getDayFour = document.getElementById("forecast-displayFour");
-            const displayDayFour = document.createElement("p");
-            displayDayFour.innerText = "day four info here!";
-            getDayFour.appendChild(displayDayFour);
+            getDayFour.innerText = "Temperature: " + (data.list[27].main.temp) + "F, Icon: " + (data.list[27].weather[0].icon) + ", Humidity: " + (data.list[27].main.humidity) + "%, Wind Speed: " + (data.list[27].wind.speed) + "mph";
 
             //card 5
+            const dayNameFive = document.getElementById("forecastFive");
+            dayNameFive.innerText = data.list[35].dt_txt;
             const getDayFive = document.getElementById("forecast-displayFive");
-            const displayDayFive = document.createElement("p");
-            displayDayFive.innerText = "day four info here!";
-            getDayFive.appendChild(displayDayFive);
+            getDayFive.innerText = "Temperature: " + (data.list[35].main.temp) + "F, Icon: " + (data.list[35].weather[0].icon) + ", Humidity: " + (data.list[35].main.humidity) + "%, Wind Speed: " + (data.list[35].wind.speed) + "mph";
         })
         .catch(function (error) {
             console.log(error);

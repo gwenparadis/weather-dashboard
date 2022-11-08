@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(101, 188, 150);
+    align-items: center;
+}
+
+header {
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(183, 73, 32);
+    color: white;
+}
+
+#search-bar {
+    background-color: lightgray;
+}
+
+#search-button {
+    background-color: rgb(223, 138, 107);
+}

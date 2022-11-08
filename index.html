@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -16,64 +17,54 @@
     <main class="row">
         <div class="col-2 mb-5">
             <div class="card">
-                <h3 class="card-header">Search Bar Area</h3>
-                <input type="text" class="card-body" placeholder="City Name, State Code, Country">
-                ie. Boston, MA, USA
-                <button type="search" class="text-center" id="search-button">Search</button>
+                <h3 class="card-header">Search</h3>
+                <input type="text" class="card-body" id="search-bar" placeholder="Type: City, State Code, Country">
+                <p>example: Boston, MA, USA</p>
+                <button type="search" class="text-center" id="search-button">GET WEATHER</button>
                 </div>
             </div>
         </div>
         <div class="col-8 mb-5">
             <div class="card">
-                <h3 class="card-header" id="weather-location">Weather Location Here</h3>
-                <ul class='card-body' id='current-weather-display'></ul>
+                <h3 class="card-header" id="weather-location">Current Weather</h3>
+                <ul class='card-body' id='current-weather-display'>Search a City Name, State Code, Country Code to see Current Weather Displayed</ul>
             </div>
         </div>
     </main>
 
     <section class="row">
         <div class="col-2 mb-5">
-            <div class="card" id="forecastOne">
-                <h3 class="card-header">Day</h3>
-                <ul class="card-body" id="forecast-displayOne">
-                    Weather goes here, love
-                </ul>
+            <div class="card">
+                <h3 class="card-header" id="forecastOne">Today +1</h3>
+                <ul class="card-body" id="forecast-displayOne">Search a City Name, State Code, Country Code to see Forecasted Weather Displayed</ul>
             </div>
         </div>
         </div>
         <div class="col-2 mb-5">
-            <div class="card" id="forecastTwo">
-                <h3 class="card-header">Day</h3>
-                <ul class="card-body" id="forecast-displayTwo">
-                    Weather goes here, love
-                </ul>
+            <div class="card">
+                <h3 class="card-header" id="forecastTwo">Today +2</h3>
+                <ul class="card-body" id="forecast-displayTwo">Search a City Name, State Code, Country Code to see Forecasted Weather Displayed</ul>
             </div>
         </div>
         </div>
         <div class="col-2 mb-5">
-            <div class="card" id="forecastThree">
-                <h3 class="card-header">Day</h3>
-                <ul class="card-body" id="forecast-displayThree">
-                    Weather goes here, love
-                </ul>
+            <div class="card">
+                <h3 class="card-header" id="forecastThree">Today +3</h3>
+                <ul class="card-body" id="forecast-displayThree">Search a City Name, State Code, Country Code to see Forecasted Weather Displayed</ul>
             </div>
         </div>
         </div>
         <div class="col-2 mb-5">
-            <div class="card" id="forecastFour">
-                <h3 class="card-header">Day</h3>
-                <ul class="card-body" id="forecast-displayFour">
-                    Weather goes here, love
-                </ul>
+            <div class="card">
+                <h3 class="card-header" id="forecastFour">Today +4</h3>
+                <ul class="card-body" id="forecast-displayFour">Search a City Name, State Code, Country Code to see Forecasted Weather Displayed</ul>
             </div>
         </div>
         </div>
         <div class="col-2 mb-5">
-            <div class="card" id="forecastFive">
-                <h3 class="card-header">Day</h3>
-                <ul class="card-body" id="forecast-displayFive">
-                    Weather goes here, love
-                </ul>
+            <div class="card">
+                <h3 class="card-header" id="forecastFive">Today +5</h3>
+                <ul class="card-body" id="forecast-displayFive">Search a City Name, State Code, Country Code to see Forecasted Weather Displayed</ul>
             </div>
         </div>
         </div>

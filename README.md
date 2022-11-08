@@ -11,7 +11,7 @@ This webpage can be accessed on Github Pages, at the link:
 
 Once the webpage has been accessed using the Installation guidelines above, the user will see the webpage, matching the screenshot below. The user can edit the text in the search bar to match their preferred city name where they would like to retrieve weather data. For increased accuracy, the user will enter in the following format: (city name), (state code), (country code). Then the user can click search. At this time, the fetch requests will run and the weather information gathered by these commands will be populated in the 'current weather' and 'forecast' boxes on the screen. For clarity, the city name that matches the user search will be populated at the top of the 'current weather data' information.
 
-![Scheduler Readme Screenshot](file path) -- 2 screenshots showing before and after search!
+![Weather Readme Screenshot](screenshot-before.png)
 
 ## Credits
 
