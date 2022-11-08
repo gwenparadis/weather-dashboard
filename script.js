@@ -10,7 +10,7 @@ let lon;
 //fetch request to get weather forecast location with geocoding API
 function getCurrentWeather() {
     //get request for geolocation API, turn city name into latitude-longitude
-    const locationUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + (cityName.value) + '&appid=6f4f8d8e13827c9d81f342b6e1821c12';
+    const locationUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + (cityName.value) + '&appid=6f4f8d8e13827c9d81f342b6e1821c12';
 
     fetch(locationUrl)
         .then(function (response) {
@@ -22,7 +22,7 @@ function getCurrentWeather() {
 
             console.log('the latitude and longitude coordinates are: ' + lat + " ," + lon);
 
-            const currentWeatherUrl = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=6f4f8d8e13827c9d81f342b6e1821c12';
+            const currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=6f4f8d8e13827c9d81f342b6e1821c12';
             return fetch(currentWeatherUrl);
         })
         .then(function (response) {
@@ -49,7 +49,7 @@ function getForecast(data) {
     console.log(data.coord.lat);
     console.log(data.coord.lon);
 
-    const forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&units=imperial&appid=6f4f8d8e13827c9d81f342b6e1821c12";
+    const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&units=imperial&appid=6f4f8d8e13827c9d81f342b6e1821c12";
     return fetch(forecastUrl)
         .then(function (response) {
             return response.json();
